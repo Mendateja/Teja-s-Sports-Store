@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teja's Sports Equipment Store</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="header" id="header">
+    <nav class="navbar">
+      <div class="logo" onclick="scrollToSection('home')">
+        <i class="fas fa-trophy"></i>
+        <span class="logo-text">Teja's <span class="accent">Sports</span></span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#categories" onclick="closeMenu()">Categories</a></li>
+        <li><a href="#products" onclick="closeMenu()">Products</a></li>
+        <li><a href="#offers" onclick="closeMenu()">Offers</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search products..."/>
+          <i class="fas fa-search" id="searchBtn"></i>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">India's #1 Sports Equipment Store</p>
+      <h1 class="hero-title">PLAY HARD.<br><span class="accent">WIN BIG.</span></h1>
+      <p class="hero-sub">Cricket • Football • Badminton • Tennis • Hockey & More</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" onclick="scrollToSection('products')">
+          <i class="fas fa-shopping-bag"></i> Shop Now
+        </a>
+        <a class="btn btn-outline" onclick="scrollToSection('categories')">
+          <i class="fas fa-th"></i> Browse Categories
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>🏏 Cricket</span><span>⚽ Football</span><span>🏸 Badminton</span>
+      <span>🎾 Tennis</span><span>🏀 Basketball</span><span>🏒 Hockey</span>
+      <span>🏐 Volleyball</span><span>⛳ Golf</span><span>🥊 Fitness</span>
+      <span>🏏 Cricket</span><span>⚽ Football</span><span>🏸 Badminton</span>
+      <span>🎾 Tennis</span><span>🏀 Basketball</span><span>🏒 Hockey</span>
+      <span>🏐 Volleyball</span><span>⛳ Golf</span><span>🥊 Fitness</span>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section" id="categories">
+    <div class="container">
+      <p class="section-eyebrow">What's Your Game?</p>
+      <h2 class="section-title">Shop By <span class="accent">Category</span></h2>
+      <div class="categories-grid">
+        <div class="category-card" onclick="filterByCategory('cricket')">
+          <div class="cat-img-wrap"><img src="cricket bats.jpg" alt="Cricket" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Cricket</h3><span>Bats, Balls, Kits & More</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('football')">
+          <div class="cat-img-wrap"><img src="football.jpg" alt="Football" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Football</h3><span>Balls, Boots, Gloves</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('badminton')">
+          <div class="cat-img-wrap"><img src="badminton  2 rackets & cock.jpg" alt="Badminton" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Badminton</h3><span>Rackets, Shuttles</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('tennis')">
+          <div class="cat-img-wrap"><img src="tennis ball.jpg" alt="Tennis" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Tennis</h3><span> balls</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('basketball')">
+          <div class="cat-img-wrap"><img src="Basket ball.jpg" alt="Basketball" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Basketball</h3><span>Balls, Shoes</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('hockey')">
+          <div class="cat-img-wrap"><img src="hockey bat & ball.jpg" alt="Hockey" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Hockey</h3><span>Sticks, Balls, Kits</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('volleyball')">
+          <div class="cat-img-wrap"><img src="volley ball.jpg" alt="Volleyball" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Volleyball</h3><span>Balls, Nets</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('golf')">
+          <div class="cat-img-wrap"><img src="golf balls.jpg" alt="Golf" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Golf</h3><span>Clubs, Balls</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('shoes')">
+          <div class="cat-img-wrap"><img src="gym shoe.jpg" alt="Shoes" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Shoes</h3><span>Sports, Running, gym</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('fitness')">
+          <div class="cat-img-wrap"><img src="fitness.jpg" alt="Fitness" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Fitness</h3><span>rope, dumbbells</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('baseball')">
+          <div class="cat-img-wrap"><img src="Base ball bat.jpg" alt="Baseball" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Baseball</h3><span>Bats, Helmets</span>
+        </div>
+        <div class="category-card" onclick="filterByCategory('other')">
+          <div class="cat-img-wrap"><img src="carrom board.jpg" alt="Others" onerror="this.style.background='#1e2d4a'"/></div>
+          <h3>Others</h3><span>Carrom, Chess & More</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFERS ===== -->
+  <section class="offers-banner" id="offers">
+    <div class="offer-card offer-blue">
+      <p class="offer-tag">Limited Time</p>
+      <h2>FLAT 30% OFF</h2>
+      <p>On all Cricket Equipment</p>
+      <a class="btn btn-white" onclick="filterByCategory('cricket')">
+        <i class="fas fa-tag"></i> Grab Deal
+      </a>
+    </div>
+    <div class="offer-card offer-dark">
+      <p class="offer-tag">Special Combo</p>
+      <h2>BUY 2 GET 1</h2>
+      <p>On Badminton Rackets & Shuttles</p>
+      <a class="btn btn-primary" onclick="filterByCategory('badminton')">
+        <i class="fas fa-gift"></i> Shop Now
+      </a>
+    </div>
+    <div class="offer-card offer-navy">
+      <p class="offer-tag">Mega Sale</p>
+      <h2>UP TO 50% OFF</h2>
+      <p>On Football & Accessories</p>
+      <a class="btn btn-white" onclick="filterByCategory('football')">
+        <i class="fas fa-bolt"></i> Explore
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="section" id="products">
+    <div class="container">
+      <p class="section-eyebrow">Hand-Picked For You</p>
+      <h2 class="section-title">Our <span class="accent">Products</span></h2>
+      <div class="filter-btns">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+        <button class="filter-btn" onclick="filterProducts('cricket', this)">Cricket</button>
+        <button class="filter-btn" onclick="filterProducts('football', this)">Football</button>
+        <button class="filter-btn" onclick="filterProducts('badminton', this)">Badminton</button>
+        <button class="filter-btn" onclick="filterProducts('tennis', this)">Tennis</button>
+        <button class="filter-btn" onclick="filterProducts('hockey', this)">Hockey</button>
+        <button class="filter-btn" onclick="filterProducts('volleyball', this)">Volleyball</button>
+        <button class="filter-btn" onclick="filterProducts('golf', this)">Golf</button>
+        <button class="filter-btn" onclick="filterProducts('basketball', this)">Basketball</button>
+        <button class="filter-btn" onclick="filterProducts('shoes', this)">Shoes</button>
+        <button class="filter-btn" onclick="filterProducts('fitness', this)">Fitness</button>
+        <button class="filter-btn" onclick="filterProducts('baseball', this)">Baseball</button>
+        <button class="filter-btn" onclick="filterProducts('other', this)">Others</button>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+      <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your cart is empty!</p>
+        <span>Add some products first</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total Amount:</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="checkout()">
+        <i class="fas fa-lock"></i> Checkout
+      </button>
+      <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;" onclick="clearCart()">
+        <i class="fas fa-trash"></i> Clear Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <p class="section-eyebrow">What Players Say</p>
+      <h2 class="section-title">Customer <span class="accent">Reviews</span></h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Best cricket kit I've ever bought. Quality is outstanding and delivery was super fast!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">R</div><div><strong>Rahul Sharma</strong><span>Delhi</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Got badminton rackets at an amazing price. My whole team ordered from here!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">P</div><div><strong>Priya Nair</strong><span>Hyderabad</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Football boots are top-notch. Exactly like the pictures. Will shop again for sure!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">A</div><div><strong>Arjun Patel</strong><span>Mumbai</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Tennis rackets are excellent quality. Great store for all sports equipment!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">S</div><div><strong>Sneha Reddy</strong><span>Bangalore</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Ordered hockey kit for my son. Perfect fit and great quality at this price!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">V</div><div><strong>Vijay Kumar</strong><span>Chennai</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Amazing collection of sports gear. Fast shipping and great packaging too!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">M</div><div><strong>Meera Singh</strong><span>Pune</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter">
+    <div class="container">
+      <i class="fas fa-envelope-open-text newsletter-icon"></i>
+      <h2>Get Exclusive <span class="accent">Deals</span> in Your Inbox</h2>
+      <p>Subscribe and get <strong>10% OFF</strong> on your first order!</p>
+      <div class="newsletter-form">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address"/>
+        <button class="btn btn-primary" onclick="subscribeNewsletter()">
+          <i class="fas fa-paper-plane"></i> Subscribe
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><strong>Address</strong><p>123 Sports Avenue, Bhimavaram, Andhra Pradesh - 534201</p></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div><strong>Phone</strong><p>+91 7013134865</p></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div><strong>Email</strong><p>mendateja09@gmail.com</p></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div><strong>Working Hours</strong><p>Mon - Sat: 9:00 AM - 8:00 PM</p></div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <input type="text" id="contactName" placeholder="Your Name"/>
+          <input type="email" id="contactEmail" placeholder="Your Email"/>
+          <input type="text" id="contactSubject" placeholder="Subject"/>
+          <textarea id="contactMessage" placeholder="Your Message" rows="4"></textarea>
+          <button class="btn btn-primary" onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <i class="fas fa-trophy"></i>
+            <span class="logo-text">Teja's <span class="accent">Sports</span></span>
+          </div>
+          <p>India's most trusted sports equipment store. Quality gear for every sport, every player.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a onclick="scrollToSection('home')">Home</a></li>
+            <li><a onclick="scrollToSection('categories')">Categories</a></li>
+            <li><a onclick="scrollToSection('products')">Products</a></li>
+            <li><a onclick="scrollToSection('offers')">Offers</a></li>
+            <li><a onclick="scrollToSection('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Sports</h4>
+          <ul>
+            <li><a onclick="filterByCategory('cricket')">Cricket</a></li>
+            <li><a onclick="filterByCategory('football')">Football</a></li>
+            <li><a onclick="filterByCategory('badminton')">Badminton</a></li>
+            <li><a onclick="filterByCategory('tennis')">Tennis</a></li>
+            <li><a onclick="filterByCategory('hockey')">Hockey</a></li>
+            <li><a onclick="filterByCategory('volleyball')">Volleyball</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Teja's Sports Equipment Store. All rights reserved. Made with ❤️ in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
